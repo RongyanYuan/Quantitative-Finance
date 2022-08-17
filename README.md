@@ -1,2 +1,3 @@
 # Quantitative-Finance
-#Please run it on Latex to see the final version of notes.
+#Here are notes on basics of financial market.
+#Download the pdf directly, Latex code is available as well. 
