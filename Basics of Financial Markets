@@ -1,0 +1,132 @@
+\documentclass{article}
+\title{Quantitative Finance}
+\date{today}
+\usepackage{graphicx}
+
+\begin{document}
+
+\section{\textbf{stock}}
+\begin{itemize}
+\item Stock is the ownership of a small piece of a company
+\item this entitles the owner of the stock to a proportion of the corporation's asset and profits equal to how much stock they own
+\item \underline{shares are the units of stocks}
+\item Investment can be as shares of the company
+\end{itemize}
+
+\subsection{Price of stock}
+\begin{itemize}
+\item General concept of how stock works: companies raise capital by borrowing or issuing bonds or go public.
+\item Companies have to issue stock via  the Stock Exchange, which has a list of companies that want to raise capital
+\item Brokers firms can provide the platform where investors can  buy or sell stocks
+\item \underline{Stock price fluctuates mainly due to \textbf{supply and demand}}
+\item Stock price is usually expressed as S(t) and very similar to a \underline{Random Walk}
+\item \underline{The risk of investment correlates the volatility of stock price, \textbf{measure of the dispersion}}
+\end{itemize}
+
+\section{\textbf{Commodities}}
+\begin{itemize}
+\item Commodities are raw products such as \textbf{gold, oil, natural gas}
+\item Commodities, such as oil, are \textbf{EXTREMELY} volatile, which is why we have \textbf{future contracts}
+\item Commodity usually fluctuates like random walk
+\item \underline{Commodity typically rise when inflation is accelerating}, which is why we include it in portfolio
+\end{itemize}
+
+\subsection{Future Contract}
+\begin{itemize}
+\item Example: The major cost for airlines is oil, so they use \textbf{oil futures} to protect them from rising oil prices
+\item Future Contracts and commodities are traded in Future Market, such as New York Mercantile Exchange, \textbf{Primary Market}
+\end{itemize}
+
+\subsection{What if we cannot invest into a commodity directly}
+\begin{itemize}
+\item Invest into a company that heavily relies on the given commodity
+\item Example: gold and shares of gold mines may be correlated
+\item It is also positively correlated with companies' performance so that we Use Pairs Trading Strategy
+\end{itemize}
+
+\section{Currencies and Forex}
+\subsection{Currencies Definiton}
+\begin{itemize}
+\item Exchange rate is the rate at which one national currency will be exchanged for another
+\item Currency is worth another currency
+\item \underline{government and central banks can influence currencies and exchange rates}
+\end{itemize}
+
+\subsection{Currency Traits}
+Why do exchange rates fluctuate?
+\begin{itemize}
+\item Exchange rate rise and fall due to fluctuation of \underline{supply and demand}
+\item Exchange rates are usually similar to a \textbf{random walk}
+\end{itemize}
+
+\subsection{FOREX Market}
+\begin{itemize}
+\item International Currencies are traded in FOREX market
+\item Investors use \textbf{FOREX Broker Firms} that have the ability to buy and sell currencies.
+\end{itemize}
+
+\section{Factors affecting exchange rates}
+\begin{itemize}
+\item interest rates: interest rate is major factor that can be \textbf{manipulated by the central bank of a country}. \textbf{Investors will lend money to the banks of the given country for higher returns}
+\item Therefore, higher interest rates indicate higher exchange rates
+
+\item Money supply: the money supply created by the central bank by printing too much currency may trigger inflation. Investors do not like inflation so they will leave the currency that can push the value of  a currency down
+\item Therefore, higher money supply may lead to lower exchange rates
+
+\item Financial stability: the financial stability and \underline{economic growth} of a given country have a \underline{huge impact on the value of the exchange rate}
+\item Therefore, better economic performance leads to higher exchange rate
+\item There are arbitrage opportunities when currencies are mispriced; We can construct directed graph G(V,E) out of the exchange rate table with V currencies, see Figure 1:
+
+\begin{enumerate}
+\item The V nodes are currencies
+\item The E Edges are the relative values
+\item Arbitrage opps can be found by exchange one currency to currencies and go back to the original currency, which forms a cycle
+\item Therefore, we can use \textbf{Bellman-ford shortest Path algorithm} to find negative cycles in O(V$*$E) running time.
+\end{enumerate}
+
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{CurrencyExchange.jpg}
+\caption{Example of currency exchange arbitrage opportunity graph}
+\end{figure}
+
+\section{Long and Short position}
+\begin{itemize}
+\item Long Position: You own the security, and investors maintain long position in the expectation that the stock will increase in value in the future, such that:
+
+\begin{center} S($t_T$) $>$ S($t_0$) \end{center}
+
+\item Short position means you sell the security, with expectation that stock will decrease such that:
+
+\begin{center} S($t_T$) $<$ S($t_0$) \end{center}
+
+\item Short Position leads to another action: \textbf{Short Selling}
+\item \textbf{Short Selling}: sell something you don't actually own
+\item \textbf{Short Selling} is when an \underline{investor borrows shares and immediately sells them}, expecting he or she can buy them up later at a lower price and return them to the lender and \textbf{pocket the difference}, and the profit will be: 
+
+\begin{center}  S($t_0$) - S($t_T$), given that S($t_0$) $>$ S($t_T$) \end{center}
+\end{itemize}
+
+\subsection{Risks with Short and Long Positions}
+\begin{itemize}
+\item Shorting is \textbf{more risker than} long positions
+\item For example, for lone position, you can only lose 100\% of your money; however, \underline{there is no limit of how much you can lose for short selling}, because there is \textbf{no limit} for a given stock to increase, and the lose of short position will be: 
+
+\begin{center}  S($t_T$) $-$ S($t_0$), given that S($t_0$) $<$ S($t_T$)  \end{center}
+\item S($t_T$) could go really high meaning you have to pay more to buy it back and return
+
+\end{itemize}
+
+\subsection{Market Basics}
+\begin{itemize}
+\item \textbf{Bear-ish Market}: is when the market experiences \underline{stable prices declines}
+\item Therefore, securities fall for a sustained period of time, where we can \underline{make profit with short positions}
+\item \textbf{Bull-ish Market}: is when the market experiences stable price increase, where we can  \underline{make profit with long positions}
+\end{itemize}
+
+
+
+
+\end{document}
